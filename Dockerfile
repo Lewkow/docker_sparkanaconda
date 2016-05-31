@@ -38,5 +38,8 @@ EXPOSE 8888
 # make directory for notebooks
 RUN mkdir /root/jup
 
+# change dir
+WORKDIR /root/jup
+
 # default command
 CMD ["echo", "Hello from spark anaconda image!"]
