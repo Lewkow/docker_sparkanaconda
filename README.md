@@ -26,6 +26,14 @@ $ docker build -t sparkanaconda .
 $ ./docker_run.sh
 ```
 
+If you now go to your browser and enter your Docker machine's IP and the port 8888 a Jupyter server interface should appear with an example notebook "docker_spark_example.ipynb".
+
+Example address:
+
+```
+http://192.168.99.100:8888
+```
+
 ***
 
 ## Using the Docker image from Docker hub
