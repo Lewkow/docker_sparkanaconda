@@ -38,6 +38,5 @@ EXPOSE 8888
 # make directory for notebooks
 RUN mkdir /root/jup
 
-# start pyspark from /root/jup
-WORKDIR /root/jup
-CMD ["pyspark"]
+# default command
+CMD ["echo", "Hello from spark anaconda image!"]
