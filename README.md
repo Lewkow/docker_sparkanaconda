@@ -7,6 +7,9 @@ Making it easy to launch a Spark enabled Jupyter server from a Docker container
 Docker can be installed on Windows, OS X, or Linux.
 See the [Docker install page](https://docs.docker.com/engine/installation/) for instructions.
 
+Note: For OS X, docker runs inside of a light weight virtual machine with a default IP address of 192.168.100.99
+To start docker on OS X, launch the Docker Quickstart Terminal after installation and perform all docker operations within that terminal.
+
 ### Step 2: Clone this repository somewhere on your machine
 
 ```
