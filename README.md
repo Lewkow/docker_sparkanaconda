@@ -1,6 +1,11 @@
 # Docker + Apache Spark + Anaconda Python
 Making it easy to launch a Spark enabled Jupyter server from a Docker container
 
+* Ubuntu 14.04
+* Apache Spark 1.6.1
+* Anaconda Python 2.7
+* Scala 2.10.4
+
 ## Building the Docker image from the Dockerfile
 
 ### Step 1: Install Docker on your machine
