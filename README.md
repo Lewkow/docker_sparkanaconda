@@ -42,6 +42,4 @@ Example address:
 http://192.168.99.100:8888
 ```
 
-***
 
-## Using the Docker image from Docker hub
