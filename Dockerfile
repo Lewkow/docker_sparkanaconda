@@ -18,9 +18,10 @@ ENV SCALA_HOME /usr/local/src/scala/scala-2.10.4
 ENV PATH $SCALA_HOME/bin:$PATH
 
 # # install spark
-RUN wget http://www.gtlib.gatech.edu/pub/apache/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz
-RUN tar xvf spark-1.6.1-bin-hadoop2.6.tgz -C ~/ && rm /spark-1.6.1-bin-hadoop2.6.tgz
-RUN mv ~/spark-1.6.1-bin-hadoop2.6 ~/spark-1.6.1
+RUN wget http://mirror.nexcess.net/apache/spark/spark-1.6.2/spark-1.6.2-bin-hadoop2.6.tgz
+# RUN wget http://www.gtlib.gatech.edu/pub/apache/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz
+RUN tar xvf spark-1.6.2-bin-hadoop2.6.tgz -C ~/ && rm /spark-1.6.2-bin-hadoop2.6.tgz
+RUN mv ~/spark-1.6.2-bin-hadoop2.6 ~/spark
 
 # install anaconda
 RUN cd ~ && wget http://repo.continuum.io/archive/Anaconda2-4.0.0-Linux-x86_64.sh
@@ -28,9 +29,15 @@ RUN bash ~/Anaconda2-4.0.0-Linux-x86_64.sh -b -p /root/anaconda
 ENV PATH /root/anaconda/bin:$PATH
 
 # set env vars to link anaconda to spark
-ENV PATH "$PATH:/root/spark-1.6.1/bin"
+ENV PATH "$PATH:/root/spark/bin"
 ENV IPYTHON_OPTS "notebook --ip=0.0.0.0 --no-browser"
 ENV MASTER local[2]
+
+# Install python packages
+RUN conda install bokeh
+RUN conda install csvkit
+RUN pip install utils
+RUN conda install seaborn
 
 # expose jupyter notebook port 8888
 EXPOSE 8888
